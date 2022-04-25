@@ -60,10 +60,12 @@ def main():
 #if you select something fromt the combobox it will call the fucntion that'll show you an image of the pokemon
     cbo_pokemon_sel.bind('<<ComboboxSelected>>',handle_cbo_pokemon)
 
-def btn_set_desktop_click():
-    pokemon_name = cbo_pokemon_sel.get()
-    image_path = os.path.join(images_dir, pokemon_name +'.png')
-    set_desktop(image_path)
+#When the button is pressed this will get the option they chose and and the picture associated to it. It will then send that pic to the set_dekstop function to set the image as the background image.
+    def btn_set_desktop_click():
+        pokemon_name = cbo_pokemon_sel.get()
+        image_path = os.path.join(images_dir, pokemon_name +'.png')
+        set_desktop(image_path)
+    
 
 
 
